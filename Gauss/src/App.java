@@ -4,13 +4,16 @@ public class App {
         int n;
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Determine el tamaño de la matriz");
+        //Determinar el tamaño de la matriz
+        System.out.print("Tamaño de la matriz: ");
         n = scanner.nextInt();
-        int [][] matriz = new int [n][n];
 
-        GaussPivote gauss = new GaussPivote();
+        GaussPivote gauss = new GaussPivote(n);
         
         //Llenar matriz
-        gauss.LlenarMatriz(n);
+        gauss.LlenarMatriz();
+
+        //Mostrar matriz
+        gauss.MostrarMatriz();
     }
 }

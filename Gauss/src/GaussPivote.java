@@ -1,14 +1,31 @@
-import java.util.Scanner;
+import java.util.*;
 public class GaussPivote {
     Scanner scanner = new Scanner(System.in);
-    public int [][] LlenarMatriz (int n) {
-        int [][] matriz = new int [n][n];
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
+
+    //Declaración de variables
+    public int N;
+    public int [][] matriz;
+
+    //Constructor
+    public GaussPivote (int n) {
+        N = n;
+        matriz = new int [n][n];
+    }
+
+    //Método para llenar la matriz
+    public void LlenarMatriz () {
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
                 System.out.print("["+i+"] ["+j+"] = ");
                 matriz[i][j]= scanner.nextInt();
             }
         }
-        return matriz;
+    }
+
+    //Método para mostrar la matriz
+    public void MostrarMatriz () {
+        for (int i = 0; i < N; i++) {
+            System.out.println(Arrays.toString(matriz[i]));
+        }
     }
 }
