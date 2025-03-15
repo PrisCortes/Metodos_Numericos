@@ -11,9 +11,9 @@ public class App {
         GaussPivote gauss = new GaussPivote(n);
         
         //Llenar matriz
-        gauss.LlenarMatriz();
+        gauss.llenarMatriz();
 
         //Mostrar matriz
-        gauss.MostrarMatriz();
+        gauss.mostrarMatriz();
     }
 }
