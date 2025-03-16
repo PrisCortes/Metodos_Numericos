@@ -44,7 +44,13 @@ public class GaussPivote {
             for (int j = 0; j <= N; j++) {
                 matriz[i][j] /= pivote;
             }
-
+            //Eliminar los elementos debajo del pivote
+            for (int j = i + 1; j < N; j++) {
+                double factor = matriz[j][i];
+                for (int k = 0; k <= N; k++) {
+                    matriz[j][k] -= factor * matriz[i][k];
+                }
+            }
         }
     }
 }
