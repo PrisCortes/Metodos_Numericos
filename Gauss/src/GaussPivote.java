@@ -29,28 +29,39 @@ public class GaussPivote {
         for (int i = 0; i < N; i++) {
             System.out.println(Arrays.toString(matriz[i]));
         }
-        System.out.println("RESULTADOS");
+    }
+
+    //Método para mostrar el vector reultante
+    public void mostrarResultados () {
         for (int i = 0; i < N; i++) {
-            System.out.print("["+resultados[i]+"]");
+            System.out.printf("%.2f\t", resultados[i]);
         }
     }
 
-    //Método de eliminación gaussiana hacia atras
+    //Método de eliminación gaussiana hacia adelante con normalización
     public void metodoGauss () {
         for (int i = 0; i < N; i++) {
             //Obtener el pivote
             double pivote = matriz[i][i];
-            //Hacer 1 el pivote
             for (int j = 0; j <= N; j++) {
                 matriz[i][j] /= pivote;
             }
             //Eliminar los elementos debajo del pivote
             for (int j = i + 1; j < N; j++) {
                 double factor = matriz[j][i];
-                for (int k = 0; k <= N; k++) {
+                for (int k = i; k <= N; k++) {
                     matriz[j][k] -= factor * matriz[i][k];
                 }
             }
+        }
+
+        // Sustitución hacia atrás para obtener la solución
+        for (int i = N - 1; i >= 0; i--) {
+            double suma = 0;
+            for (int j = i + 1; j < N; j++) {
+                suma += matriz[i][j] * resultados[j];
+            }
+            resultados[i] = matriz[i][N] - suma;
         }
     }
 }

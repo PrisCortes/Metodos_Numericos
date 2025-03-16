@@ -13,10 +13,15 @@ public class App {
         //Llenar matriz
         gauss.llenarMatriz();
 
+        //Mostrar matriz dada
+        System.out.println("La matriz dada es: ");
+        gauss.mostrarMatriz();
+
         //Resolver matriz
         gauss.metodoGauss();
 
-        //Mostrar matriz resuelta
-        gauss.mostrarMatriz();
+        //Mostrar los resultados
+        System.out.println("Los resultados son: ");
+        gauss.mostrarResultados();
     }
 }
