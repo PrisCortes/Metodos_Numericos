@@ -10,14 +10,14 @@ public class GaussPivote {
     //Constructor
     public GaussPivote (int n) {
         N = n;
-        matriz = new double [n][n];
+        matriz = new double [n][n+1];
         resultados = new double [n];
     }
 
     //Método para llenar la matriz
     public void llenarMatriz () {
         for (int i = 0; i < N; i++) {
-            for (int j = 0; j < N; j++) {
+            for (int j = 0; j <= N; j++) {
                 System.out.print("["+i+"] ["+j+"] = ");
                 matriz[i][j]= scanner.nextDouble();
             }
@@ -29,17 +29,22 @@ public class GaussPivote {
         for (int i = 0; i < N; i++) {
             System.out.println(Arrays.toString(matriz[i]));
         }
+        System.out.println("RESULTADOS");
+        for (int i = 0; i < N; i++) {
+            System.out.print("["+resultados[i]+"]");
+        }
     }
 
-    //Método de eliminación gaussiana hacia adelante
+    //Método de eliminación gaussiana hacia atras
     public void metodoGauss () {
-        
-    }
+        for (int i = 0; i < N; i++) {
+            //Obtener el pivote
+            double pivote = matriz[i][i];
+            //Hacer 1 el pivote
+            for (int j = 0; j <= N; j++) {
+                matriz[i][j] /= pivote;
+            }
 
-    //Método para intercambiar filas
-    public void inercambiarFilas (double [][] matriz, int fila1, int fila2) {
-        double[] auxiliar = matriz[fila1];
-        matriz[fila1] = matriz[fila2];
-        matriz[fila2] = auxiliar;
+        }
     }
 }

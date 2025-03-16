@@ -13,7 +13,10 @@ public class App {
         //Llenar matriz
         gauss.llenarMatriz();
 
-        //Mostrar matriz
+        //Resolver matriz
+        gauss.metodoGauss();
+
+        //Mostrar matriz resuelta
         gauss.mostrarMatriz();
     }
 }
