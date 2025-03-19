@@ -14,14 +14,18 @@ public class App {
         gauss.llenarMatriz();
 
         //Mostrar matriz dada
-        System.out.println("La matriz dada es: ");
+        System.out.println("\nLa matriz dada es: ");
         gauss.mostrarMatriz();
 
         //Resolver matriz
         gauss.metodoGauss();
 
+        //Mostrar matriz resultante
+        System.out.println("\nLa matriz resultante es: ");
+        gauss.mostrarMatriz();
+
         //Mostrar los resultados
-        System.out.println("Los resultados son: ");
+        System.out.println("\nLos resultados son: ");
         gauss.mostrarResultados();
     }
 }

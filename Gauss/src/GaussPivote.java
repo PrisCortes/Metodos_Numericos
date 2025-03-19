@@ -25,16 +25,20 @@ public class GaussPivote {
     }
 
     //Método para mostrar la matriz
-    public void mostrarMatriz () {
+    public void mostrarMatriz() {
         for (int i = 0; i < N; i++) {
-            System.out.println(Arrays.toString(matriz[i]));
+            for (int j = 0; j < matriz[i].length; j++) {
+                System.out.printf("%.4f ", matriz[i][j]);
+            }
+            System.out.println();
         }
-    }
+    }       
+    
 
     //Método para mostrar el vector reultante
     public void mostrarResultados () {
         for (int i = 0; i < N; i++) {
-            System.out.printf("%.2f\t", resultados[i]);
+            System.out.printf("%.4f\t", resultados[i]);
         }
     }
 
@@ -61,7 +65,8 @@ public class GaussPivote {
             for (int j = i + 1; j < N; j++) {
                 suma += matriz[i][j] * resultados[j];
             }
-            resultados[i] = matriz[i][N] - suma;
+            matriz[i][N] -= suma;
+            resultados[i] = matriz[i][N];
         }
     }
 }
