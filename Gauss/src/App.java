@@ -20,7 +20,8 @@ public class App {
 
         //Resolver matriz
         //metodos.metodoGauss();
-        metodos.gaussJordan();
+        //metodos.gaussJordan();
+        metodos.gaussSeidel(100, 1e-6);
 
         //Mostrar matriz resultante
         System.out.println("\nLa matriz resultante es: ");

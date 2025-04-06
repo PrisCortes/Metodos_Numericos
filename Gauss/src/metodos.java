@@ -77,11 +77,15 @@ public class metodos {
             if(matriz[i][i] == 0){
                 for(int k = 0; k < N; k++){
                     if(matriz[k][i] != 0){
-                        double[] filaTemp = new double[N+1]; // Arreglo temporal para intercambio
+                        // Arreglo temporal para intercambio
+                        double[] filaTemp = new double[N+1]; 
                         for(int j = 0; j <= N; j++){
-                            filaTemp[j] = matriz[i][j]; // Guardar fila actual
-                            matriz[i][j] = matriz[k][j]; // Intercambiar con otra fila
-                            matriz[k][j] = filaTemp[j]; // Completar intercambio
+                            // Guardar fila actual
+                            filaTemp[j] = matriz[i][j]; 
+                            // Intercambiar con otra fila
+                            matriz[i][j] = matriz[k][j]; 
+                            // Completar intercambio
+                            matriz[k][j] = filaTemp[j]; 
                         }
                         break;
                     }
@@ -91,16 +95,19 @@ public class metodos {
             double pivote = matriz[i][i];
             if (pivote != 0){
                 for(int j = 0; j <= N; j++){
-                    matriz[i][j] /= pivote; // Se divide toda la fila por el pivote
+                    // Se divide toda la fila por el pivote
+                    matriz[i][j] /= pivote; 
                 }
             }
             
             // Hacer ceros en la columna del pivote
             for(int k = 0; k < N; k++){
                 if(k != i){
-                    double factor = matriz[k][i]; // Se toma el factor para hacer el 0
+                    // Se toma el factor para hacer el 0
+                    double factor = matriz[k][i]; 
                     for(int j = 0; j <= N; j++){
-                        matriz[k][j] -= factor * matriz[i][j]; // Se resta la fila pivote multiplicada por el factor
+                        // Se resta la fila pivote multiplicada por el factor
+                        matriz[k][j] -= factor * matriz[i][j]; 
                     }
                 }
             }
@@ -109,6 +116,39 @@ public class metodos {
             resultados[i] = matriz[i][N];
         }
     }
+
+        //Método Gauss-Seidel
+        public void gaussSeidel(int maxIter, double tol){
+
+            //Arreglo para guardar los resultados de la iteración anterior
+            double[] resultadosAnt = new double[N];
+            for (int i = 0; i < maxIter; i++) {
+                // Copia el vector actual de resultados al vector de resultados anteriores
+                System.arraycopy(resultados, 0, resultadosAnt, 0, N); 
+                
+                for (int j = 0; j < N; j++) {
+                    double sum = 0.0;
+                    // Calcula la suma de los términos de la fila j, excepto el elemento diagonal
+                    for (int k = 0; k < N; k++) {
+                        if (k != j) {
+                            sum += matriz[j][k] * resultados[k];
+                        }
+                    }
+                    // Actualiza el valor de la variable j usando la fórmula de Gauss-Seidel
+                    resultados[j] = (matriz[j][N] - sum) / matriz[j][j];
+                }
+    
+                // Verificación de la tolerancia
+                double maxDiff = 0.0;
+                for (int j = 0; j < N; j++) {
+                    maxDiff = Math.max(maxDiff, Math.abs(resultados[j] - resultadosAnt[j]));
+                }
+                if (maxDiff < tol) {
+                    System.out.println("Convergencia alcanzada en " + (i + 1) + " iteraciones.");
+                    break;
+                }
+            }
+        }
 
     //Métodos desarrollados en equipo
 }
