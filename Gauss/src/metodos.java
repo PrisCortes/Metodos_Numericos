@@ -201,5 +201,11 @@ public class metodos {
         }
 
 
-    //Métodos desarrollados en equipo
+    /*Métodos desarrollados en equipo
+        César Rojas Moreno
+        Ingrid Ortega Ramos
+        Alexis Martin Cortes de Lucio
+        Ernesto Uriel García Torres
+        Priscila Cortés Ramírez
+    */
 }
