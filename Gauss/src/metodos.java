@@ -150,5 +150,56 @@ public class metodos {
             }
         }
 
+        //Método Jacobi
+        public void jacobi (int maxIter, double tol) {
+    
+            boolean convergencia = false;
+            int iter = 0;
+            double[] resultadosNuevos = new double[N];
+    
+            while (iter < maxIter) {
+                iter++;
+    
+                // Calcular la nueva aproximación para cada variable
+                for (int i = 0; i < N; i++) {
+                    double suma = 0;
+                    // Suma todos los términos de la fila i, excepto el término diagonal
+                    for (int j = 0; j < N; j++) {
+                        if (j != i) {
+                            suma += matriz[i][j] * resultados[j];
+                        }
+                    }
+                    // Calcula el nuevo valor de la variable i
+                    resultadosNuevos[i] = (matriz[i][N] - suma) / matriz[i][i];
+                }
+    
+                // Verificar la convergencia
+                boolean esConvergente = true;
+                for (int i = 0; i < N; i++) {
+                    if (Math.abs(resultadosNuevos[i] - resultados[i]) > tol) {
+                        esConvergente = false;
+                        break;
+                    }
+                }
+    
+                // Copia los nuevos valores al vector original para la siguiente iteración
+                System.arraycopy(resultadosNuevos, 0, resultados, 0, N);
+    
+                // Si la solución ha convergido, se imprime un mensaje y se rompe el ciclo
+                if (esConvergente) {
+                    convergencia = true;
+                    System.out.println("\nConvergencia alcanzada en " + iter + " iteraciones.");
+                    break;
+                }
+            }
+    
+            // Si después de todas las iteraciones no se alcanzó la convergencia, se informa
+            if (!convergencia) {
+                System.out.println("\nNo se alcanzó la convergencia en el número máximo de iteraciones.");
+            }
+    
+        }
+
+
     //Métodos desarrollados en equipo
 }
