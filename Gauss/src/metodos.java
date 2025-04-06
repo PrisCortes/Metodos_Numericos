@@ -1,5 +1,5 @@
 import java.util.*;
-public class GaussPivote {
+public class metodos {
     Scanner scanner = new Scanner(System.in);
 
     //Declaración de variables
@@ -8,7 +8,7 @@ public class GaussPivote {
     public double  [] resultados;
 
     //Constructor
-    public GaussPivote (int n) {
+    public metodos (int n) {
         N = n;
         matriz = new double [n][n+1];
         resultados = new double [n];
@@ -69,4 +69,46 @@ public class GaussPivote {
             resultados[i] = matriz[i][N];
         }
     }
+
+    //Método de Gauss-Jordan
+    public void gaussJordan(){
+        for(int i = 0; i < N; i++){
+            // Si el pivote es 0, intercambiar filas
+            if(matriz[i][i] == 0){
+                for(int k = 0; k < N; k++){
+                    if(matriz[k][i] != 0){
+                        double[] filaTemp = new double[N+1]; // Arreglo temporal para intercambio
+                        for(int j = 0; j <= N; j++){
+                            filaTemp[j] = matriz[i][j]; // Guardar fila actual
+                            matriz[i][j] = matriz[k][j]; // Intercambiar con otra fila
+                            matriz[k][j] = filaTemp[j]; // Completar intercambio
+                        }
+                        break;
+                    }
+                }
+            }
+            // Hacer el pivote igual a 1
+            double pivote = matriz[i][i];
+            if (pivote != 0){
+                for(int j = 0; j <= N; j++){
+                    matriz[i][j] /= pivote; // Se divide toda la fila por el pivote
+                }
+            }
+            
+            // Hacer ceros en la columna del pivote
+            for(int k = 0; k < N; k++){
+                if(k != i){
+                    double factor = matriz[k][i]; // Se toma el factor para hacer el 0
+                    for(int j = 0; j <= N; j++){
+                        matriz[k][j] -= factor * matriz[i][j]; // Se resta la fila pivote multiplicada por el factor
+                    }
+                }
+            }
+        }
+        for (int i = 0; i < N; i++) {
+            resultados[i] = matriz[i][N];
+        }
+    }
+
+    //Métodos desarrollados en equipo
 }

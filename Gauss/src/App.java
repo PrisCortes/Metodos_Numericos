@@ -5,27 +5,29 @@ public class App {
         Scanner scanner = new Scanner(System.in);
 
         //Determinar el tamaño de la matriz
-        System.out.print("Tamaño de la matriz: ");
+        System.out.print("\nTamaño de la matriz: ");
         n = scanner.nextInt();
 
-        GaussPivote gauss = new GaussPivote(n);
+        System.out.println("\nCoeficientes de la matriz: ");
+        metodos metodos = new metodos(n);
         
         //Llenar matriz
-        gauss.llenarMatriz();
+        metodos.llenarMatriz();
 
         //Mostrar matriz dada
         System.out.println("\nLa matriz dada es: ");
-        gauss.mostrarMatriz();
+        metodos.mostrarMatriz();
 
         //Resolver matriz
-        gauss.metodoGauss();
+        //metodos.metodoGauss();
+        metodos.gaussJordan();
 
         //Mostrar matriz resultante
         System.out.println("\nLa matriz resultante es: ");
-        gauss.mostrarMatriz();
+        metodos.mostrarMatriz();
 
         //Mostrar los resultados
         System.out.println("\nLos resultados son: ");
-        gauss.mostrarResultados();
+        metodos.mostrarResultados();
     }
 }
