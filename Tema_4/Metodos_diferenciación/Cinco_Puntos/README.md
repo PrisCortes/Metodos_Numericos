@@ -57,4 +57,7 @@ Donde:
 - [Código en lenguaje Java](./src/Cinco_Puntos.java)
 
 ## Ejemplo de aplicación
+- Derivar la función: x^2 + 6x + 2
+- Cuando: x = 7
+- Con un paso de 0.001
 - [Ejecución del código en Java](./src/Ejecucion.png)
