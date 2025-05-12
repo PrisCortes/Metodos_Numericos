@@ -35,7 +35,7 @@ public class metodos {
     }       
     
 
-    //Método para mostrar el vector reultante
+    //Método para mostrar el vector resultante
     public void mostrarResultados () {
         for (int i = 0; i < N; i++) {
             System.out.printf("%.4f\t", resultados[i]);
