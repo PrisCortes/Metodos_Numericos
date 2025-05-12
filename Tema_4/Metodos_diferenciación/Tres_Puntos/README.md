@@ -7,9 +7,9 @@ La diferenciación numérica de tres puntos es un método para aproximar la deri
 ## Formula del método
 f′(x) ≈ (f(x+h)−f(x−h))/2h
 Donde:
-- `f(x + h)`: valor de la función un poco a la derecha del punto x.
-- `f(x - h)`: valor de la función un poco a la izquierda del punto x.
-- `2h`: es el doble del paso y representa la distancia total entre los dos puntos considerados alrededor de x.
+- `f(x)`: Es la función que se desea derivar.
+- `x`: Punto en el que quieres aproximar la derivada.
+- `h`: Representa la distancia entre puntos en el eje x para calcular la derivada. Se conoce como "paso" o "delta x".
 
 ## Pseudocódigo
 
@@ -55,8 +55,8 @@ Donde:
 - [Código en lenguaje Java](./src/Tres_Puntos.java)
 
 ## Ejemplo de aplicación
-Derivar la función: 6x^2 + 3x + 8
-Cuando: x = 4
-Con un paso de 0.001
+- Derivar la función: 6x^2 + 3x + 8
+- Cuando: x = 4
+- Con un paso de 0.001
 
 - [Ejecución del código en Java](./src/Ejecución.png)
