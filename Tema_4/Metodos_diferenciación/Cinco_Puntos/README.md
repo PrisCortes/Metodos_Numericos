@@ -5,7 +5,8 @@
 Método para aproximar la derivada de una función en un punto usando los valores de la función en cinco puntos alrededor de ese punto.
 
 ## Formula del método
-f′(x) ≈ (−f(x+2h)+8f(x+h)−8f(x−h)+f(x−2h))/12h <br>
+    f′(x) ≈ (−f(x+2h)+8f(x+h)−8f(x−h)+f(x−2h))/12h
+
 Donde:
 - `f(x)`: Es la función que se desea derivar.
 - `x`: Punto en el que quieres aproximar la derivada.
@@ -57,7 +58,7 @@ Donde:
 - [Código en lenguaje Java](./src/Cinco_Puntos.java)
 
 ## Ejemplo de aplicación
-- Derivar la función: x^2 + 6x + 2
+- Diferenciar la función: x^2 + 6x + 2
 - Cuando: x = 7
 - Con un paso de 0.001
 - [Ejecución del código en Java](./src/Ejecucion.png)
