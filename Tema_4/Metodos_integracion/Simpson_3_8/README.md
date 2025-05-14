@@ -1,18 +1,80 @@
-## Getting Started
+# Tema 4: Método de integración Simpson 3/8
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Descripción del método
 
-## Folder Structure
+El método de Simpson 3/8 aproxima el área bajo una curva utilizando polinomios cúbicos. Es especialmente útil cuando el número de subintervalos es múltiplo de 3, ya que agrupa los puntos de tres en tres. Este método ofrece una buena precisión para funciones suaves, similar al Simpson 1/3 pero con una regla de aproximación distinta.
 
-The workspace contains two folders by default, where:
+## Formula del método
+    ∫[a, b] f(x) dx ≈ (3h/8) * [f(x0) + 3f(x1) + 3f(x2) + 2f(x3) + 3f(x4) + 3f(x5) + ... + 3f(x_{n−1}) + f(xn)]
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+Donde:
+- `a`: Límite inferior de integración.
+- `b`: Límite superior de integración.
+- `n`: Número de subintervalos (debe ser múltiplo de 3)
+- `h`: Ancho del subintervalo, calculado como (b - a) / n
+- `xi`: Puntos dentro del intervalo [a, b]
+- `f(x)`: Función a integrar.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+## Pseudocódigo
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+    Proceso MetodoSimpson_3_8
 
-## Dependency Management
+        Definir a, b, c, limInf, limSup Como Real
+        Definir n Como Entero
+        Definir h, suma, x, integral Como Real
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+        Escribir "Ingrese el coeficiente a (para ax^2):"
+        Leer a
+
+        Escribir "Ingrese el coeficiente b (para bx):"
+        Leer b
+
+        Escribir "Ingrese el coeficiente c:"
+        Leer c
+
+        Escribir "Ingrese el límite inferior de integración:"
+        Leer limInf
+
+        Escribir "Ingrese el límite superior de integración:"
+        Leer limSup
+
+        Escribir "Ingrese el número de subintervalos (múltiplo de 3):"
+        Leer n
+
+        Si n <= 0 o n MOD 3 ≠ 0 o limInf >= limSup Entonces
+            Escribir "Datos inválidos. Asegúrese de que n > 0, que n sea múltiplo de 3 y que los límites sean correctos."
+            FinProceso
+        FinSi
+
+        h <- (limSup - limInf) / n
+        suma <- EvaluarFuncion(a, b, c, limInf) + EvaluarFuncion(a, b, c, limSup)
+
+        Para i <- 1 Hasta n - 1 Hacer
+            x <- limInf + i * h
+            Si i MOD 3 = 0 Entonces
+                suma <- suma + 2 * EvaluarFuncion(a, b, c, x)
+            Sino
+                suma <- suma + 3 * EvaluarFuncion(a, b, c, x)
+            FinSi
+        FinPara
+
+        integral <- (3 * h / 8) * suma
+
+        Escribir "La aproximación de la integral es: ", integral
+
+    FinProceso
+
+    Funcion EvaluarFuncion(a, b, c, x) : Real
+        EvaluarFuncion <- a * x^2 + b * x + c
+    FinFuncion
+
+## Programa ejecutable
+- [Código en lenguaje Java](./src/Simpson_3_8.java)
+
+## Ejemplo de aplicación
+- Integrar la función: 5x^2 + 2x + 3
+- Limite inferior: -2
+- Limite superior: 4
+- Número de subintervalos: 6
+
+- [Ejecución del código en Java](./src/Ejecucion.png)
