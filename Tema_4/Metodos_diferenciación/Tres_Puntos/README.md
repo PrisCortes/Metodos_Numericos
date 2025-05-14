@@ -5,8 +5,8 @@
 La diferenciación numérica de tres puntos es un método para aproximar la derivada de una función utilizando tres puntos en su dominio. Este enfoque se basa en interpolar un polinomio a través de estos tres puntos y luego derivar dicho polinomio. 
 
 ## Formula del método
-f′(x) ≈ (f(x+h)−f(x−h))/2h <br>
-Donde:
+f′(x) ≈ (f(x+h)−f(x−h))/2h
+    Donde:
 - `f(x)`: Es la función que se desea derivar.
 - `x`: Punto en el que quieres aproximar la derivada.
 - `h`: Representa la distancia entre puntos en el eje x para calcular la derivada. Se conoce como "paso" o "delta x".
