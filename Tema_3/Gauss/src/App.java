@@ -19,9 +19,9 @@ public class App {
         metodos.mostrarMatriz();
 
         //Resolver matriz
-        //metodos.metodoGauss();
-        //metodos.gaussJordan();
-        //metodos.gaussSeidel(100, 1e-6);
+        metodos.metodoGauss();
+        metodos.gaussJordan();
+        metodos.gaussSeidel(100, 1e-6);
         metodos.jacobi(1000, 1e-6);
 
         //Mostrar matriz resultante

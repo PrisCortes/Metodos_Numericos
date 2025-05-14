@@ -15,42 +15,35 @@ Donde:
 ## Pseudocódigo
 
     Proceso MetodoTrapecioSimple
-
         Definir a, b, c, limInf, limSup Como Real
         Definir f_a, f_b, resultado Como Real
-
+        
         Escribir "Ingrese el coeficiente a (para ax^2):"
         Leer a
-
+        
         Escribir "Ingrese el coeficiente b (para bx):"
         Leer b
-
+        
         Escribir "Ingrese el coeficiente c:"
         Leer c
-
+        
         Escribir "Ingrese el límite inferior de integración:"
         Leer limInf
-
+        
         Escribir "Ingrese el límite superior de integración:"
         Leer limSup
-
+        
         Si limInf >= limSup Entonces
             Escribir "El límite inferior debe ser menor que el límite superior."
-            FinProceso
         FinSi
 
-        f_a <- EvaluarFuncion(a, b, c, limInf)
-        f_b <- EvaluarFuncion(a, b, c, limSup)
+        f_a <- a * limInf * limInf + b * limInf + c
+        f_b <- a * limSup * limSup + b * limSup + c
 
         resultado <- (limSup - limInf) / 2 * (f_a + f_b)
 
         Escribir "La aproximación de la integral es: ", resultado
-
     FinProceso
-
-    Funcion EvaluarFuncion(a, b, c, x) : Real
-        EvaluarFuncion <- a * x^2 + b * x + c
-    FinFuncion
 
 ## Programa ejecutable
 - [Código en lenguaje Java](./src/Trapecio_Simple.java)

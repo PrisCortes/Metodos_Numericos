@@ -18,55 +18,57 @@ Donde:
 ## Pseudocódigo
 
     Proceso MetodoSimpson_3_8
-
         Definir a, b, c, limInf, limSup Como Real
         Definir n Como Entero
-        Definir h, suma, x, integral Como Real
-
+        Definir h, suma, x, fx, integral Como Real
+        
         Escribir "Ingrese el coeficiente a (para ax^2):"
         Leer a
-
+        
         Escribir "Ingrese el coeficiente b (para bx):"
         Leer b
-
+        
         Escribir "Ingrese el coeficiente c:"
         Leer c
-
+        
         Escribir "Ingrese el límite inferior de integración:"
         Leer limInf
-
+        
         Escribir "Ingrese el límite superior de integración:"
         Leer limSup
-
+        
         Escribir "Ingrese el número de subintervalos (múltiplo de 3):"
         Leer n
-
-        Si n <= 0 o n MOD 3 ≠ 0 o limInf >= limSup Entonces
+        
+        Si n <= 0 o n MOD 3 <> 0 o limInf >= limSup Entonces
             Escribir "Datos inválidos. Asegúrese de que n > 0, que n sea múltiplo de 3 y que los límites sean correctos."
-            FinProceso
         FinSi
 
         h <- (limSup - limInf) / n
-        suma <- EvaluarFuncion(a, b, c, limInf) + EvaluarFuncion(a, b, c, limSup)
+
+        // f(limInf)
+        x <- limInf
+        suma <- a * x * x + b * x + c
+
+        // f(limSup)
+        x <- limSup
+        suma <- suma + (a * x * x + b * x + c)
 
         Para i <- 1 Hasta n - 1 Hacer
             x <- limInf + i * h
+            fx <- a * x * x + b * x + c
+            
             Si i MOD 3 = 0 Entonces
-                suma <- suma + 2 * EvaluarFuncion(a, b, c, x)
+                suma <- suma + 2 * fx
             Sino
-                suma <- suma + 3 * EvaluarFuncion(a, b, c, x)
+                suma <- suma + 3 * fx
             FinSi
         FinPara
 
         integral <- (3 * h / 8) * suma
 
         Escribir "La aproximación de la integral es: ", integral
-
     FinProceso
-
-    Funcion EvaluarFuncion(a, b, c, x) : Real
-        EvaluarFuncion <- a * x^2 + b * x + c
-    FinFuncion
 
 ## Programa ejecutable
 - [Código en lenguaje Java](./src/Simpson_3_8.java)
