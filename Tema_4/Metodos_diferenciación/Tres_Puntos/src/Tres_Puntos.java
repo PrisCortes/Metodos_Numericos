@@ -15,25 +15,29 @@ public class Tres_Puntos {
         System.out.print("Ingrese el coeficiente c: ");
         double coefC = scanner.nextDouble();
 
-        // Solicitar el punto donde se quiere calcular la derivada
+        // Solicita el punto x en el que se desea calcular la derivada de la función
         System.out.print("Ingrese el punto x en donde desea calcular la derivada: ");
         double x = scanner.nextDouble();
 
-        // Solicitar el valor de h
+        // Solicita el valor de h, que define la precisión de la aproximación
         System.out.print("Ingrese el valor de h (por ejemplo, 0.001): ");
         double h = scanner.nextDouble();
 
+        // Validación: h debe ser positivo para evitar errores de cálculo
         if (h <= 0) {
             System.out.println("El valor de h debe ser mayor que 0.");
             return;
         }
 
-        // Aplicación del método de 3 puntos
+        // Se evalúa la función en los puntos f(x - h) y f(x + h)
         double fxMenos = evaluarFuncion(coefA, coefB, coefC, x - h);
         double fxMas = evaluarFuncion(coefA, coefB, coefC, x + h);
 
+        // Método de 3 puntos (centrado) para la derivada:
+        // f'(x) ≈ (f(x + h) - f(x - h)) / (2h)
         double derivada = (fxMas - fxMenos) / (2 * h);
 
+        // Muestra el resultado de la derivada aproximada en el punto x
         System.out.printf("La aproximación de la derivada es: %.3f\n",derivada);
     }
 

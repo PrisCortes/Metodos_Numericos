@@ -15,18 +15,18 @@ public class Simpson_1_3 {
         System.out.print("Ingrese el coeficiente c: ");
         double coefC = scanner.nextDouble();
 
-        // Solicitar los límites de integración
+        // Solicita los límites inferior y superior del intervalo de integración
         System.out.print("Ingrese el límite inferior de integración: ");
         double limInf = scanner.nextDouble();
 
         System.out.print("Ingrese el límite superior de integración: ");
         double limSup = scanner.nextDouble();
 
-        // Solicitar el número de subintervalos (n debe ser par)
+        // Solicita el número de subintervalos (n) - debe ser par para el método de Simpson 1/3
         System.out.print("Ingrese el número de subintervalos (n, número par): ");
         int n = scanner.nextInt();
 
-        // Validación de datos
+        // Validación: n debe ser positivo y par, y los límites deben estar en orden correcto
         if (n <= 0 || limInf >= limSup) {
             System.out.println("Datos inválidos. Asegúrese de que n > 0 y que el límite inferior sea menor al superior.");
             return;
@@ -36,12 +36,13 @@ public class Simpson_1_3 {
             return;
         }
 
-        // Cálculo del ancho del subintervalo
+        // Cálculo del ancho de cada subintervalo
         double h = (limSup - limInf) / n;
 
-        // Se evalúan los extremos
+        // Evaluación de los extremos f(x0) y f(xn)
         double suma = evaluarFuncion(coefA, coefB, coefC, limInf) + evaluarFuncion(coefA, coefB, coefC, limSup);
         
+        // Variables para acumular las sumas de los valores intermedios
         double suma4 = 0.0; // Suma de los valores f(x_i) para índices impares
         double suma2 = 0.0; // Suma de los valores f(x_i) para índices pares (excluyendo los extremos)
 

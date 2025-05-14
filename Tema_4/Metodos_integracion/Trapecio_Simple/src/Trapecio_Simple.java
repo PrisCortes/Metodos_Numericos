@@ -21,6 +21,7 @@ public class Trapecio_Simple {
         System.out.print("Ingrese el límite superior de integración: ");
         double b = scanner.nextDouble();
 
+        // Validación: el límite inferior debe ser menor que el superior
         if (a >= b) {
             System.out.println("Error: El límite inferior debe ser menor que el límite superior.");
             return;
@@ -33,6 +34,7 @@ public class Trapecio_Simple {
         // Aplicar la fórmula del trapecio simple
         double integral = (b - a) / 2.0 * (fa + fb);
 
+        //Mostrar el resultado
         System.out.printf("La aproximación de la integral es: %.3f\n", integral);
     }
 

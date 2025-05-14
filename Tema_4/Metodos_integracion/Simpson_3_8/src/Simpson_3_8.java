@@ -21,10 +21,11 @@ public class Simpson_3_8 {
         System.out.print("Ingrese el límite superior de integración: ");
         double limSup = scanner.nextDouble();
 
-        // Solicitar el número de subintervalos (n debe ser múltiplo de 3)
+        // Solicita el número de subintervalos, que debe ser múltiplo de 3 para Simpson 3/8
         System.out.print("Ingrese el número de subintervalos (n, múltiplo de 3): ");
         int n = scanner.nextInt();
 
+        // Validaciones básicas sobre el valor n
         if (n <= 0 || limInf >= limSup) {
             System.out.println("Datos inválidos. Asegúrese que n > 0 y que el límite inferior sea menor al superior.");
             return;
@@ -34,13 +35,17 @@ public class Simpson_3_8 {
             return;
         }
 
+        // Cálculo del ancho de cada subintervalo
         double h = (limSup - limInf) / n;
+
+        // Se evalúan los extremos del intervalo
         double suma = evaluarFuncion(coefA, coefB, coefC, limInf) + evaluarFuncion(coefA, coefB, coefC, limSup);
 
+        // Acumuladores para los términos intermedios
         double suma3 = 0.0;  // Suma de los términos donde el índice no es múltiplo de 3
         double suma2 = 0.0;  // Suma de los términos donde el índice es múltiplo de 3 (excluyendo los extremos)
 
-        // Se recorren los puntos intermedios
+        // Recorrido de los puntos intermedios del intervalo
         for (int i = 1; i < n; i++) {
             double x = limInf + i * h;
             if (i % 3 == 0)
@@ -49,9 +54,11 @@ public class Simpson_3_8 {
                 suma3 += evaluarFuncion(coefA, coefB, coefC, x);
         }
 
-        // La fórmula de Simpson 3/8 es:
-        // Integral ≈ (3h/8)[f(x0) + f(xn) + 3Σ f(xi) (i no múltiplo de 3) + 2Σ f(xi) (i múltiplo de 3, excluyendo extremos)]
+        // Fórmula de Simpson 3/8:
+        // ∫ f(x) dx ≈ (3h/8) [f(x0) + f(xn) + 3 * suma3 + 2 * suma2]
         double integral = (3 * h / 8.0) * (suma + 3 * suma3 + 2 * suma2);
+
+        //Resultado final
         System.out.printf("La aproximación de la integral es: %.3f\n", integral);
     }
 
