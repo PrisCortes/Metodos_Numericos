@@ -1,18 +1,79 @@
-## Getting Started
+# Tema 4: Método de integración Cuadratura Gaussiana
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Descripción del método
 
-## Folder Structure
+La cuadratura gaussiana es un método de integración numérica que proporciona una aproximación muy precisa para integrales definidas. A diferencia de otros métodos, selecciona inteligentemente los puntos de evaluación (`xi`) y los pesos (`wi`) para maximizar la precisión con el menor número de evaluaciones posibles. En este caso, se implementa la fórmula de cuadratura de Gauss con 2 puntos, que es ideal para funciones suaves y de tipo polinomial.
 
-The workspace contains two folders by default, where:
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+## Formula del método
+    ∫[a, b] f(x) dx ≈ ((b - a)/2) * [w1 * f(x1) + w2 * f(x2)]
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+Donde:
+    - x1 = ((b - a)/2) * (-1/√3) + (b + a)/2
+    - x2 = ((b - a)/2) * (1/√3) + (b + a)/2
+    - w1 = w2 = 1
 
-## Dependency Management
+- `a`: Límite inferior de integración.
+- `b`: Límite superior de integración.
+- `f(x)`: Función a integrar.
+- `x1`, `x2`: Puntos donde se evalúa la función.
+- `w1`, `w2`: Pesos para cada punto (valen 1 en este caso).
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## Pseudocódigo
+
+    Proceso MetodoCuadratura_Gaussiana
+
+        Definir a, b, c, limInf, limSup Como Real
+        Definir x1, x2, f1, f2, integral Como Real
+
+        Escribir "Ingrese el coeficiente a (para ax^2):"
+        Leer a
+
+        Escribir "Ingrese el coeficiente b (para bx):"
+        Leer b
+
+        Escribir "Ingrese el coeficiente c:"
+        Leer c
+
+        Escribir "Ingrese el límite inferior de integración:"
+        Leer limInf
+
+        Escribir "Ingrese el límite superior de integración:"
+        Leer limSup
+
+        Si limInf >= limSup Entonces
+            Escribir "Límites inválidos. El límite inferior debe ser menor que el superior."
+            FinProceso
+        FinSi
+
+        x1 <- ((limSup - limInf)/2) * (-1 / √3) + (limInf + limSup)/2
+        x2 <- ((limSup - limInf)/2) * (1 / √3) + (limInf + limSup)/2
+
+        f1 <- EvaluarFuncion(a, b, c, x1)
+        f2 <- EvaluarFuncion(a, b, c, x2)
+
+        integral <- ((limSup - limInf) / 2) * (f1 + f2)
+
+        Escribir "La aproximación de la integral es: ", integral
+
+    FinProceso
+
+    Funcion EvaluarFuncion(a, b, c, x) : Real
+        EvaluarFuncion <- a * x^2 + b * x + c
+    FinFuncion
+
+    Funcion EvaluarFuncion(a, b, c, x) : Real
+        EvaluarFuncion <- a * x^2 + b * x + c
+    FinFuncion
+
+## Programa ejecutable
+- [Código en lenguaje Java](./src/Cuadratura_Gaussiana.java)
+
+## Ejemplo de aplicación
+- Integrar la función: 3x^2 + 5x + 2
+- Limite inferior: 0
+- Limite superior: 4
+
+- [Ejecución del código en Java](./src/Ejecucion.png)
+

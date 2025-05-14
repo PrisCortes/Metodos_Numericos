@@ -5,20 +5,20 @@ public class Cuadratura_Gaussiana {
         Scanner scanner = new Scanner(System.in);
 
         // Lectura de los coeficientes de la función cuadrática: ax^2 + bx + c
-        System.out.println("Ingrese el coeficiente a (para ax^2):");
+        System.out.print("Ingrese el coeficiente a (para ax^2): ");
         double coefA = scanner.nextDouble();
 
-        System.out.println("Ingrese el coeficiente b (para bx):");
+        System.out.print("Ingrese el coeficiente b (para bx): ");
         double coefB = scanner.nextDouble();
 
-        System.out.println("Ingrese el coeficiente c:");
+        System.out.print("Ingrese el coeficiente c: ");
         double coefC = scanner.nextDouble();
 
         // Lectura de los límites de integración
-        System.out.println("Ingrese el límite inferior de integración:");
+        System.out.print("Ingrese el límite inferior de integración: ");
         double limInf = scanner.nextDouble();
 
-        System.out.println("Ingrese el límite superior de integración:");
+        System.out.print("Ingrese el límite superior de integración: ");
         double limSup = scanner.nextDouble();
 
         if (limInf >= limSup) {
