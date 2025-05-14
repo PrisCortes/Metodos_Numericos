@@ -6,10 +6,10 @@ Método para aproximar la derivada de una función en un punto usando los valore
 
 ## Formula del método
 f′(x) ≈ (−f(x+2h)+8f(x+h)−8f(x−h)+f(x−2h))/12h
-Donde:
-- `f(x)`: Es la función que se desea derivar.
-- `x`: Punto en el que quieres aproximar la derivada.
-- `h`: Representa la distancia entre puntos en el eje x para calcular la derivada. Se conoce como "paso" o "delta x".
+    Donde:
+    - `f(x)`: Es la función que se desea derivar.
+    - `x`: Punto en el que quieres aproximar la derivada.
+    - `h`: Representa la distancia entre puntos en el eje x para calcular la derivada. Se conoce como "paso" o "delta x".
 
 ## Pseudocódigo
 
@@ -57,4 +57,7 @@ Donde:
 - [Código en lenguaje Java](./src/Cinco_Puntos.java)
 
 ## Ejemplo de aplicación
+- Derivar la función: x^2 + 6x + 2
+- Cuando: x = 7
+- Con un paso de 0.001
 - [Ejecución del código en Java](./src/Ejecucion.png)
