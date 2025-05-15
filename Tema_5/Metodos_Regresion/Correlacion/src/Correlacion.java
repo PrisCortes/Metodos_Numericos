@@ -47,8 +47,7 @@ public class Correlacion {
         coefIntercepto = (sumaY - coefPendiente * sumaX) / n;
 
         // Cálculo del coeficiente de correlación de Pearson
-        r = (n * sumaXY - sumaX * sumaY) /
-            Math.sqrt((n * sumaX2 - sumaX * sumaX) * (n * sumaY2 - sumaY * sumaY));
+        r = (n * sumaXY - sumaX * sumaY) / Math.sqrt((n * sumaX2 - sumaX * sumaX) * (n * sumaY2 - sumaY * sumaY));
 
         // Mostrar la ecuación de la regresión y el coeficiente de correlación
         System.out.println("-----------------------------------------");
