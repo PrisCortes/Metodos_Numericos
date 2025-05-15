@@ -77,6 +77,8 @@ public class Interpolacion_Newton {
         double resultado = evaluarPolinomio(dd, x, xEval);
 
         // Mostrar resultado
-        System.out.printf("Valor interpolado en x = %.2f es: %.2f\n", xEval, resultado);
+        System.out.printf("Valor interpolado en x = %.3f es: %.2f\n", xEval, resultado);
     }
 }
+
+//Código desarrollado en equipo: Corea del Sur

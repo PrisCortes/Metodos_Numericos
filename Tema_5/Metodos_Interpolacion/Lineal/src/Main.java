@@ -32,7 +32,7 @@ public class Main {
         double resultado = InterpolacionLineal.interpolar(x0, y0, x1, y1, x);
 
         // Muestra del resultado con seis cifras decimales
-        System.out.printf("Valor interpolado: %.6f\n", resultado);
+        System.out.printf("Valor interpolado: %.3f\n", resultado);
     }
 }
 
