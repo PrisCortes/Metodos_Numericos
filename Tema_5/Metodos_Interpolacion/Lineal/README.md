@@ -1,18 +1,50 @@
-## Getting Started
+# Tema 5: Método de interpolación lineal
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Descripción del método
 
-## Folder Structure
+La interpolación lineal es el enfoque más básico y directo para estimar valores entre dos puntos conocidos. Se basa en la suposición de que el cambio entre dos datos es uniforme, es decir, sigue una línea recta.
 
-The workspace contains two folders by default, where:
+## Formula del método
+    y = y0 + [(y1-y0)/(x1-x0)] * (x-x0)
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+Donde:
+- `(x0,y0)` y `(x1,y1)`: Son los puntos conocidos.
+- `x`: Es el valor donde interpolamos.
+- `y`: Es el valor estimado en x.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+## Pseudocódigo
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+    Proceso InterpolacionLineal
+        Definir x0, x1, y0, y1, x, m, resultado Como Real
+        
+        Escribir "Valor de x0:"
+        Leer x0
+        
+        Escribir "Valor de x1:"
+        Leer x1
+        
+        Escribir "Valor de y0:"
+        Leer y0
+        
+        Escribir "Valor de y1:"
+        Leer y1
+        
+        Escribir "Valor de x:"
+        Leer x
+        
+        Si x1 = x0 Entonces
+            Escribir "Error: División entre cero. x0 y x1 no deben ser iguales."
+        FinSi
 
-## Dependency Management
+        m <- (y1 - y0) / (x1 - x0)
+        resultado <- y0 + m * (x - x0)
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+        Escribir "Valor interpolado: ", resultado
+    FinProceso
+
+## Programa ejecutable
+- [Código en lenguaje Java](./src/Main.java)
+
+## Ejemplo de aplicación
+Sabiendo que en ´1 hora´ la temperatura es de ´36.5555°´, en ´2 horas´ aumento a ´37.2222°´ y finalmente después de ´4 horas´ se llego a ´38.1111°´. Calcular la temperatura en ´3 horas´.
+- [Ejecución del código en Java](./src/Ejecucion.png)
