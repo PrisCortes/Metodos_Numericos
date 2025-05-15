@@ -67,13 +67,13 @@ Donde:
 
 ## Ejemplo de aplicación
 Relación entre años de experiencia y salario mensual.
-| Temperatura  | Ventas |
-|--------------|--------|
-|      1       |  1500  |
-|      3       |  2100  |
-|      5       |  2600  |
-|      7       |  3000  |
-|      9       |  3400  |
+|  Años  | Salario |
+|--------|---------|
+|   1    |  1500   |
+|   3    |  2100   |
+|   5    |  2600   |
+|   7    |  3000   |
+|   9    |  3400   |
 
 
 - [Ejecución del código en Java](./src/Ejecucion.png)
