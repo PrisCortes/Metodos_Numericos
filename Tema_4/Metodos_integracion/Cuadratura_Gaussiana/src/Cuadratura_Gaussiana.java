@@ -46,7 +46,7 @@ public class Cuadratura_Gaussiana {
         // I ≈ ((b - a)/2) * [w1*f(x1) + w2*f(x2)]
         double integral = (limSup - limInf) / 2.0 * (w1 * f1 + w2 * f2);
 
-        System.out.printf("La aproximación de la integral usando cuadratura gaussiana es: %.6f\n", integral);
+        System.out.printf("La aproximación de la integral usando cuadratura gaussiana es: %.3f\n", integral);
     }
 
     // Método que evalúa la función cuadrática ax^2 + bx + c en un punto x
