@@ -79,5 +79,6 @@ Un restaurante analiza cómo afecta la temperatura exterior a las ventas de sopa
 |      24      |   85   |
 |      22      |   95   |
 
-
 - [Ejecución del código en Java](./src/Ejecucion.png)
+
+- **Resultado:** El valor obtenido, -0.99 es muy cercano a -1, lo cual indica una correlación negativa muy fuerte. Es decir, existe una relación lineal casi perfecta inversa entre las variables: cuando **X** aumenta, **Y** tiende a disminuir proporcionalmente.

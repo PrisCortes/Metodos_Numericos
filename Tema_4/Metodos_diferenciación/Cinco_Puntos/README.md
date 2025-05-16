@@ -57,3 +57,4 @@ Donde:
 - Cuando: x = 7
 - Con un paso de 0.001
 - [Ejecución del código en Java](./src/Ejecucion.png)
+- **Resultado:** 20u

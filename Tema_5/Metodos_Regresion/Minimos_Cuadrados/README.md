@@ -63,7 +63,7 @@ Donde:
 
 
 ## Programa ejecutable
-- [Código en lenguaje Java](./src/Correlacion.java)
+- [Código en lenguaje Java](./src/Minimos_Cuadrados.java)
 
 ## Ejemplo de aplicación
 Relación entre años de experiencia y salario mensual.

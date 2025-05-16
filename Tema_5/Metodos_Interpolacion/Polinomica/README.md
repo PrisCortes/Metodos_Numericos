@@ -68,5 +68,8 @@ Donde:
 - [Código en lenguaje Java](./src/Interpolacion_Newton.java)
 
 ## Ejemplo de aplicación
-Sabiendo que en ´1 hora´ la temperatura de un paciente es de ´36.5555°´, en ´2 horas´ aumento a ´37.2222°´ y finalmente a las ´4 horas´ se llego a ´38.1111°´. Calcular la temperatura en ´3 horas´.
+Sabiendo que después de **1 hora** de haber llegado, la temperatura de un paciente es de **36.5555°**, en **2 horas** aumento a **37.2222°** y finalmente a las **4 horas** llego a **38.1111°**. Calcular la temperatura en **3 horas**.
+
 - [Ejecución del código en Java](./src/Ejecucion.png)
+
+- **Resultado:** 37.74° tenia el paciente después de 3 horas de haber llegado.

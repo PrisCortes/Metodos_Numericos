@@ -69,3 +69,4 @@ Donde:
 
 - [Ejecución del código en Java](./src/Ejecucion.png)
 
+- **Resultado:** 112u

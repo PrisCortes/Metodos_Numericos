@@ -46,5 +46,8 @@ Donde:
 - [Código en lenguaje Java](./src/Main.java)
 
 ## Ejemplo de aplicación
-Sabiendo que en ´2 horas´ la temperatura de un paciente es de ´37.2222°´ y a las ´4 horas´ llego a ´38.1111°´. Calcular la temperatura en ´3 horas´.
+Sabiendo que después de **2 horas** de haber llegado, la temperatura de un paciente es de **37.2222°** y a las **4 horas** llego a **38.1111°**. Calcular la temperatura que tuvo después de **3 horas** de haber llegado.
+
 - [Ejecución del código en Java](./src/Ejecucion.png)
+
+- **Resultado:** 37.66° tenia el paciente después de 3 horas de haber llegado.

@@ -80,3 +80,5 @@ Donde:
 - Número de subintervalos: 6
 
 - [Ejecución del código en Java](./src/Ejecucion.png)
+
+- **Resultado:** 150u

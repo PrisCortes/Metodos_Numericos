@@ -77,3 +77,5 @@ Donde:
 - Número de trapecios: 6
 
 - [Ejecución del código en Java](./src/Ejecucion.png)
+
+- **Resultado:** -22.37u

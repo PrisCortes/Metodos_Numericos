@@ -54,3 +54,5 @@ Donde:
 - Limite superior: 8
 
 - [Ejecución del código en Java](./src/Ejecucion.png)
+
+- **Resultado:** 132u

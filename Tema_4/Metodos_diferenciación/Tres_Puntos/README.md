@@ -58,3 +58,5 @@ Donde:
 - Con un paso de 0.001
 
 - [Ejecución del código en Java](./src/Ejecución.png)
+
+- **Resultado:** 51u
