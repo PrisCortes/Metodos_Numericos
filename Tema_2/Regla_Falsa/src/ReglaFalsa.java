@@ -33,11 +33,11 @@ public class ReglaFalsa {
             double fc = f(c);
 
             // Mostrar detalles de la iteración actual
-            System.out.printf("Iteración %d: a = %.6f, b = %.6f, c = %.6f, f(c) = %.6f\n", i, a, b, c, fc);
+            System.out.printf("Iteración %d: a = %.3f, b = %.3f, c = %.3f, f(c) = %.3f\n", i, a, b, c, fc);
 
             // Verificar si se ha alcanzado una raíz aproximada con la tolerancia deseada
             if (Math.abs(fc) < tolerancia) {
-                System.out.printf("\nRaíz aproximada: %.6f en %d iteraciones\n", c, i);
+                System.out.printf("\nRaíz aproximada: %.3f en %d iteraciones\n", c, i);
                 return;
             }
 
@@ -50,7 +50,7 @@ public class ReglaFalsa {
         }
 
         // Si no se encuentra la raíz dentro del número máximo de iteraciones
-        System.out.printf("\nNo se alcanzó la tolerancia deseada después de %d iteraciones. Último valor: %.6f\n", maxIteraciones, c);
+        System.out.printf("\nNo se alcanzó la tolerancia deseada después de %d iteraciones. Último valor: %.3f\n", maxIteraciones, c);
     }
 
     //Método principal que inicializa los valores y llama al método encontrarRaiz()
