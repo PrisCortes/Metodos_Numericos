@@ -5,7 +5,7 @@
 Es un método abierto que requiere una derivada. Utiliza una aproximación tangente para encontrar la raíz. Es rápido pero sensible a la elección del punto inicial.
 
 ## Formula del método
-    xn+1 =Xn − (f′(Xn) /​ f(Xn))
+    Xn+1 = Xn − (f′(Xn) /​ f(Xn))
 
 Donde:
 - `Xn`: aproximación actual de la raíz
