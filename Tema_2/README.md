@@ -5,4 +5,4 @@
 - [`Tema 4`: Método de la Regla Falsa](./Regla_Falsa/)
 - [`Tema 5`: Método de la Secante](./Secante/)
 
-- [Métodos desarrollados en Excel (archivo para descargar)](./~$Métodos%20numéricos%20Raiz.xlsx)
+- [Métodos desarrollados en Excel (archivo para descargar)](./Métodos%20numéricos%20Raiz.xlsx)
