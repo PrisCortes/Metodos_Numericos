@@ -1,4 +1,4 @@
-# Tema 6: Método de Heun Simple
+# Tema 6: Método de un paso - Heun Simple
 
 ## Descripción del método
 
