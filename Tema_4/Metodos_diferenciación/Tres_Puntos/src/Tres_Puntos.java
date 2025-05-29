@@ -46,3 +46,5 @@ public class Tres_Puntos {
         return a * x * x + b * x + c;
     }
 }
+
+//Código realizado en equipo

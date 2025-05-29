@@ -65,3 +65,5 @@ public class AdamsBashforthConRK4 {
         System.out.printf("\nAproximación final de y en t = %.2f: %.2f%n", t, yExacta);
     } 
 }
+
+//Código realizado por el equipo de Corea del Norte y adaptado por el equipo de Corea del Sur

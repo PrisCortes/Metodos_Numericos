@@ -48,3 +48,5 @@ public class Cinco_Puntos {
          return a * x * x + b * x + c;
      }
  }
+
+//Código realizado en equipo

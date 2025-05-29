@@ -34,3 +34,5 @@ public class HeunSimple {
         System.out.printf("\nAproximación final de y en x = %.2f: %.2f%n", x, y);
     }
 }
+
+//Código realizado por el equipo de Corea del Sur
